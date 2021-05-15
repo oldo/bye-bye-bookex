@@ -1,15 +1,26 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import React from "react";
+import "tailwindcss/tailwind.css";
+import Head from "next/head";
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+interface HomeProps {}
 
-export default IndexPage
+const Home: React.FC<HomeProps> = ({}) => {
+  return (
+    <>
+      <Head>
+        <title>Bye Bye Bookex</title>
+      </Head>
+      <div className="h-screen w-screen flex flex-col items-center md:justify-center px-4">
+        <img src="/logo.png" className="h-16 mb-6 mt-24 md:mt-0" />
+        <div className="md:text-lg max-w-4xl text-center">
+          It is with regret that we have had to shut down Bookex. We thank
+          everyone who joined us for the ride - both as clients and behind the
+          scenes developing the product. We are proud of what we built but it is
+          now time to move on to new adventures.
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Home;
